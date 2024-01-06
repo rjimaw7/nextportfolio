@@ -3,6 +3,7 @@
 import { useRef } from "react";
 import Hero from "./helpers/Hero";
 import Projects from "./helpers/Projects";
+import Work from "./helpers/Work";
 
 export default function Home() {
   const projectsRef = useRef<HTMLElement | null>(null);
@@ -10,9 +11,10 @@ export default function Home() {
 
   return (
     // <main className="flex min-h-screen flex-col items-center justify-between p-24 border border-black">
-    <main className="h-screen">
+    <>
       <Hero projectsRef={projectsRef} workRef={workRef} />
       <Projects projectsRef={projectsRef} />
-    </main>
+      <Work workRef={workRef} />
+    </>
   );
 }

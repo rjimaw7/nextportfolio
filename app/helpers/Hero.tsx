@@ -10,7 +10,7 @@ const Hero = ({ projectsRef, workRef }: Props) => {
   return (
     <section
       id="hero"
-      className="mx-auto flex max-w-[980px] flex-col items-center justify-center gap-1 h-full"
+      className="mx-auto flex max-w-[980px] flex-col items-center justify-center gap-1 min-h-screen"
     >
       <div className="flex flex-col gap-5">
         <h1 className="text-center text-3xl font-bold leading-tight tracking-tighter md:text-6xl">

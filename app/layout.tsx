@@ -1,20 +1,20 @@
-import type { Metadata } from 'next'
-import { Inter } from 'next/font/google'
-import { ThemeProvider } from "@/components/theme-provider"
-import './globals.css'
-import Navbar from './helpers/Navbar'
+import type { Metadata } from "next";
+import { Inter } from "next/font/google";
+import { ThemeProvider } from "@/components/theme-provider";
+import "./globals.css";
+import Navbar from "./helpers/Navbar";
 
-const inter = Inter({ subsets: ['latin'] })
+const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: 'Alessandro Mate Jr. | Front End Developer',
-  description: 'My Portfolio Website using NextJS',
-}
+  title: "Alessandro Mate Jr. | Front End Developer",
+  description: "My Portfolio Website using NextJS",
+};
 
 export default function RootLayout({
   children,
 }: {
-  children: React.ReactNode
+  children: React.ReactNode;
 }) {
   return (
     <>
@@ -26,13 +26,14 @@ export default function RootLayout({
             defaultTheme="light"
             enableSystem
             disableTransitionOnChange
-            
           >
-            <Navbar />
-            {children}
+            <main className="min-h-screen">
+              <Navbar />
+              {children}
+            </main>
           </ThemeProvider>
         </body>
       </html>
     </>
-  )
+  );
 }
