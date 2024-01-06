@@ -4,6 +4,7 @@ import { useRef } from "react";
 import Hero from "./helpers/Hero";
 import Projects from "./helpers/Projects";
 import Work from "./helpers/Work";
+import Contact from "./helpers/Contact";
 
 export default function Home() {
   const projectsRef = useRef<HTMLElement | null>(null);
@@ -15,6 +16,7 @@ export default function Home() {
       <Hero projectsRef={projectsRef} workRef={workRef} />
       <Projects projectsRef={projectsRef} />
       <Work workRef={workRef} />
+      <Contact />
     </>
   );
 }

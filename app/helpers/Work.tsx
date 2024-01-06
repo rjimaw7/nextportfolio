@@ -10,9 +10,9 @@ const Work = ({ workRef }: Props) => {
     <section
       id="work"
       ref={workRef}
-      className="max-w-screen-2xl container flex flex-col gap-8 mt-8"
+      className="max-w-screen-2xl container flex flex-col gap-8 mt-12 min-h-screen"
     >
-      <h2 className="text-3xl font-bold">How I Work</h2>
+      <h2 className="text-3xl font-bold text-center">How I Work</h2>
       <div className="flex justify-center items-center">
         <Image
           src="/flowchart.PNG"

@@ -19,9 +19,9 @@ const Projects = ({ projectsRef }: Props) => {
     <section
       ref={projectsRef}
       id="projects"
-      className="max-w-screen-2xl container flex flex-col gap-8"
+      className="max-w-screen-2xl container flex flex-col items-center justify-center gap-8 min-h-screen"
     >
-      <h2 className="text-3xl font-bold">My Projects</h2>
+      <h2 className="text-3xl font-bold text-center">My Projects</h2>
 
       <div className="flex justify-between gap-4 items-center">
         <Card>
