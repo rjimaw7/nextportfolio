@@ -5,6 +5,7 @@ import Hero from "./helpers/Hero";
 import Projects from "./helpers/Projects";
 import Work from "./helpers/Work";
 import Contact from "./helpers/Contact";
+import Footer from "./helpers/Footer";
 
 export default function Home() {
   const projectsRef = useRef<HTMLElement | null>(null);
@@ -17,6 +18,7 @@ export default function Home() {
       <Projects projectsRef={projectsRef} />
       <Work workRef={workRef} />
       <Contact />
+      <Footer />
     </>
   );
 }
