@@ -12,7 +12,6 @@ export default function Home() {
   const workRef = useRef<HTMLElement | null>(null);
 
   return (
-    // <main className="flex min-h-screen flex-col items-center justify-between p-24 border border-black">
     <>
       <Hero projectsRef={projectsRef} workRef={workRef} />
       <Projects projectsRef={projectsRef} />
