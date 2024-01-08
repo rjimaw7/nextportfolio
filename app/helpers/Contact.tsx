@@ -9,7 +9,6 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
-import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import React, { useRef } from "react";
 import { z } from "zod";
@@ -24,6 +23,7 @@ import {
   FormMessage,
 } from "@/components/ui/form";
 import emailjs from "@emailjs/browser";
+import { useToast } from "@/components/ui/use-toast";
 
 const MessageSchema = z.object({
   user_email: z.string().email(),
@@ -33,6 +33,7 @@ const MessageSchema = z.object({
 type MessageType = z.infer<typeof MessageSchema>;
 
 const Contact = () => {
+  const { toast } = useToast();
   const form = useForm<MessageType>({
     resolver: zodResolver(MessageSchema),
     defaultValues: {
@@ -55,8 +56,18 @@ const Contact = () => {
         `${process.env.NEXT_PUBLIC_KEY}`
       );
 
-      console.log(result.text);
-    } catch (error) {}
+      toast({
+        title: `${result.text}`,
+        description: (
+          <span className="text-md">Your message has been sent.</span>
+        ),
+      });
+      form.reset();
+    } catch (error: any) {
+      toast({
+        description: `${error?.text}`,
+      });
+    }
   };
 
   return (
