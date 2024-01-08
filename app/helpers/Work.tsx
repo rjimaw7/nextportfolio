@@ -10,15 +10,10 @@ import ReduxIcon from "../icons/ReduxIcon";
 import JavascriptIcon from "../icons/JavascriptIcon";
 import PostgreIcon from "../icons/PostgreIcon";
 
-interface Props {
-  workRef: MutableRefObject<HTMLElement | null>;
-}
-
-const Work = ({ workRef }: Props) => {
+const Work = () => {
   return (
     <section
       id="work"
-      ref={workRef}
       className="max-screen-2xl container flex justify-between mt-12 min-h-screen"
     >
       <div className="flex flex-col gap-8 w-full">

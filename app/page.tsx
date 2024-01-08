@@ -8,14 +8,11 @@ import Contact from "./helpers/Contact";
 import Footer from "./helpers/Footer";
 
 export default function Home() {
-  const projectsRef = useRef<HTMLElement | null>(null);
-  const workRef = useRef<HTMLElement | null>(null);
-
   return (
     <>
-      <Hero projectsRef={projectsRef} workRef={workRef} />
-      <Projects projectsRef={projectsRef} />
-      <Work workRef={workRef} />
+      <Hero />
+      <Projects />
+      <Work />
       <Contact />
       <Footer />
     </>

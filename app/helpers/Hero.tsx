@@ -1,12 +1,8 @@
 import React, { MutableRefObject } from "react";
 import { Button } from "@/components/ui/button";
+import { scrollToSection } from "@/lib/utils";
 
-interface Props {
-  projectsRef: MutableRefObject<HTMLElement | null>;
-  workRef: MutableRefObject<HTMLElement | null>;
-}
-
-const Hero = ({ projectsRef, workRef }: Props) => {
+const Hero = () => {
   return (
     <section
       id="hero"
@@ -23,18 +19,18 @@ const Hero = ({ projectsRef, workRef }: Props) => {
       <div className="flex w-full items-center justify-center space-x-4 py-4 md:pb-10">
         <Button
           className="h-11 px-4 py-2"
-          onClick={() =>
-            projectsRef.current?.scrollIntoView({ behavior: "smooth" })
-          }
+          onClick={() => {
+            scrollToSection("projects");
+          }}
         >
           Projects
         </Button>
         <Button
           className="h-11 px-4 py-2"
           variant="outline"
-          onClick={() =>
-            workRef.current?.scrollIntoView({ behavior: "smooth" })
-          }
+          onClick={() => {
+            scrollToSection("work");
+          }}
         >
           How I Work
         </Button>

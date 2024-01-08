@@ -81,8 +81,8 @@ const Contact = () => {
         <CardHeader>
           <CardTitle>Send me a message</CardTitle>
           <CardDescription>
-            Let's work together or you can give comments and feedback to improve
-            my portfolio.
+            Let&apos;s work together or you can give comments and feedback to
+            improve my portfolio.
           </CardDescription>
         </CardHeader>
         <CardContent>

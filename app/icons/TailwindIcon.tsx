@@ -31,8 +31,8 @@ const TailwindIcon = ({ className }: Props) => {
           y2="43.5303"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#2298BD" />
-          <stop offset="1" stop-color="#0ED7B5" />
+          <stop stopColor="#2298BD" />
+          <stop offset="1" stopColor="#0ED7B5" />
         </linearGradient>
       </defs>
     </svg>

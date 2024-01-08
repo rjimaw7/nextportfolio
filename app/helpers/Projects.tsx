@@ -10,14 +10,9 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 
-interface Props {
-  projectsRef: MutableRefObject<HTMLElement | null>;
-}
-
-const Projects = ({ projectsRef }: Props) => {
+const Projects = () => {
   return (
     <section
-      ref={projectsRef}
       id="projects"
       className="max-w-screen-2xl container flex flex-col items-center justify-center gap-8 min-h-screen"
     >
