@@ -24,6 +24,8 @@ import {
 } from "@/components/ui/form";
 import emailjs from "@emailjs/browser";
 import { useToast } from "@/components/ui/use-toast";
+import ReCAPTCHA from "react-google-recaptcha";
+import { useReCAPTCHA } from "../hooks/useReCAPTCHA";
 
 const MessageSchema = z.object({
   user_email: z.string().email(),
@@ -42,17 +44,24 @@ const Contact = () => {
     },
   });
   const formRef = useRef<any>(null);
+  const {
+    captchaValue,
+    recaptchaRef,
+    handleCaptchaChange,
+    resetCaptcha,
+    handleCaptchaExpire,
+  } = useReCAPTCHA();
 
   const handleSubmitMessage = async () => {
-    console.log(process.env.NEXT_PUBLIC_KEY);
-    console.log(process.env.NEXT_PUBLIC_SERVICE_ID);
-    console.log(process.env.NEXT_PUBLIC_TEMPLATE_ID);
-
     try {
-      const result = await emailjs.sendForm(
+      const result = await emailjs.send(
         `${process.env.NEXT_PUBLIC_SERVICE_ID}`,
         `${process.env.NEXT_PUBLIC_TEMPLATE_ID}`,
-        formRef.current,
+        {
+          user_email: form.getValues("user_email"),
+          message: form.getValues("message"),
+          "g-recaptcha-response": captchaValue,
+        },
         `${process.env.NEXT_PUBLIC_KEY}`
       );
 
@@ -62,14 +71,15 @@ const Contact = () => {
           <span className="text-md">Your message has been sent.</span>
         ),
       });
+      // CLEAN UP
       form.reset();
+      resetCaptcha();
     } catch (error: any) {
       toast({
         description: `${error?.text}`,
       });
     }
   };
-
   return (
     <section
       id="contact"
@@ -122,9 +132,24 @@ const Contact = () => {
                   </FormItem>
                 )}
               />
+
+              {form.formState.isDirty && form.formState.isValid && (
+                <ReCAPTCHA
+                  sitekey={process.env.NEXT_PUBLIC_SITE_KEY as string}
+                  onChange={handleCaptchaChange}
+                  ref={recaptchaRef}
+                  className="g-recaptcha"
+                  onExpired={handleCaptchaExpire}
+                />
+              )}
+
               <Button
                 type="submit"
-                disabled={!form.formState.isDirty || !form.formState.isValid}
+                disabled={
+                  !form.formState.isDirty ||
+                  !form.formState.isValid ||
+                  captchaValue === ""
+                }
               >
                 Send
               </Button>
