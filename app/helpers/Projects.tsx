@@ -1,4 +1,4 @@
-import { Github } from "lucide-react";
+import { Github, ExternalLink } from "lucide-react";
 import Image from "next/image";
 import React, { MutableRefObject } from "react";
 import {
@@ -9,6 +9,8 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
+import { Badge } from "@/components/ui/badge";
+import Link from "next/link";
 
 const Projects = () => {
   return (
@@ -18,8 +20,8 @@ const Projects = () => {
     >
       <h2 className="text-3xl font-bold text-center">My Projects</h2>
 
-      <div className="flex justify-between gap-4 items-center">
-        <Card>
+      <div className="flex justify-between gap-4 items-center w-full">
+        <Card className="w-full">
           <CardHeader>
             <CardTitle className="relative aspect-video">
               <Image
@@ -30,16 +32,29 @@ const Projects = () => {
             </CardTitle>
           </CardHeader>
           <CardContent>
-            <h3 className="text-2xl font-bold">Project 1</h3>
+            <div className="flex items-center justify-between">
+              <h3 className="text-2xl font-bold">Project 1</h3>
+
+              <div className="flex items-center gap-3">
+                <Badge className="py-1 cursor-pointer flex gap-1 items-center">
+                  <span className="text-xs">Github</span>
+                  <Github size={16} />
+                </Badge>
+                <Badge
+                  className="py-1 cursor-pointer flex gap-1 items-center"
+                  variant="outline"
+                >
+                  <span className="text-xs">Preview</span>
+                  <ExternalLink size={16} />
+                </Badge>
+              </div>
+            </div>
           </CardContent>
           <CardFooter>
-            <p className="text-muted-foreground text-base">
-              Automatic Image, Font, and Script Optimizations for improved UX
-              and Core Web Vitals.
-            </p>
+            <Badge className="py-1 cursor-pointer">React</Badge>
           </CardFooter>
         </Card>
-        <Card>
+        <Card className="w-full">
           <CardHeader>
             <CardTitle className="relative aspect-video">
               <Image
@@ -50,33 +65,67 @@ const Projects = () => {
             </CardTitle>
           </CardHeader>
           <CardContent>
-            <h3 className="text-2xl font-bold">Project 1</h3>
+            <div className="flex items-center justify-between">
+              <h3 className="text-2xl font-bold">Project 1</h3>
+
+              <div className="flex items-center gap-3">
+                <Badge className="py-1 cursor-pointer flex gap-1 items-center">
+                  <span className="text-xs">Github</span>
+                  <Github size={16} />
+                </Badge>
+                <Badge
+                  className="py-1 cursor-pointer flex gap-1 items-center"
+                  variant="outline"
+                >
+                  <span className="text-xs">Preview</span>
+                  <ExternalLink size={16} />
+                </Badge>
+              </div>
+            </div>
           </CardContent>
           <CardFooter>
-            <p className="text-muted-foreground text-base">
-              Automatic Image, Font, and Script Optimizations for improved UX
-              and Core Web Vitals.
-            </p>
+            <Badge className="py-1 cursor-pointer">React</Badge>
           </CardFooter>
         </Card>
-        <Card>
+        <Card className="w-full">
           <CardHeader>
             <CardTitle className="relative aspect-video">
-              <Image
-                src="https://picsum.photos/400/300"
-                alt="random-image"
-                fill
-              />
+              <Image src="/carsPH.png" alt="random-image" fill />
             </CardTitle>
           </CardHeader>
           <CardContent>
-            <h3 className="text-2xl font-bold">Project 1</h3>
+            <div className="flex items-center justify-between">
+              <h3 className="text-2xl font-bold">carsPH</h3>
+
+              <div className="flex items-center gap-3">
+                <Badge>
+                  <Link
+                    className=" flex gap-1 items-center py-1"
+                    href="https://github.com/rjimaw7/carsPH"
+                    target="_blank"
+                  >
+                    <span className="text-xs">Github</span>
+                    <Github size={16} />
+                  </Link>
+                </Badge>
+                <Badge variant="outline">
+                  <Link
+                    className=" flex gap-1 items-center py-1"
+                    href="https://cars-ph.vercel.app/"
+                    target="_blank"
+                  >
+                    <span className="text-xs">Preview</span>
+                    <ExternalLink size={16} />
+                  </Link>
+                </Badge>
+              </div>
+            </div>
           </CardContent>
-          <CardFooter>
-            <p className="text-muted-foreground text-base">
-              Automatic Image, Font, and Script Optimizations for improved UX
-              and Core Web Vitals.
-            </p>
+          <CardFooter className="flex gap-2 items-center justify-start">
+            <Badge className="py-1 cursor-pointer">React</Badge>
+            <Badge variant="outline" className="py-1 cursor-pointer">
+              Firebase
+            </Badge>
           </CardFooter>
         </Card>
       </div>
