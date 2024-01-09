@@ -5,24 +5,28 @@ import { Github, Moon, Sun, Linkedin } from "lucide-react";
 import { useTheme } from "next-themes";
 import Link from "next/link";
 import React from "react";
+import MobileSheet from "./MobileSheet";
 
 const Navbar = () => {
   const { setTheme } = useTheme();
 
   return (
     <header className="sticky top-0 z-50 w-full border-b border-border/40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
-      <div className="container flex h-14 max-w-screen-2xl items-center justify-between">
+      <div className="mx-5 md:container flex h-14 max-w-screen-2xl items-center justify-between">
         <div className="flex items-center gap-8">
-          <h3
-            className="text-2xl font-semibold tracking-tight cursor-pointer"
-            onClick={() => {
-              scrollToSection("hero");
-            }}
-          >
-            alessandro
-          </h3>
+          <div className="flex items-center gap-2">
+            <MobileSheet />
+            <h3
+              className="text-2xl font-semibold tracking-tight cursor-pointer"
+              onClick={() => {
+                scrollToSection("hero");
+              }}
+            >
+              alessandro
+            </h3>
+          </div>
 
-          <nav className="flex items-center gap-4 text-sm">
+          <nav className="md:flex items-center gap-4 text-sm hidden">
             <Link
               href="https://www.tiktok.com/@careershifterrj?is_from_webapp=1&sender_device=pc"
               target="_blank"
