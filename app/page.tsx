@@ -1,6 +1,5 @@
 "use client";
 
-import { useRef } from "react";
 import Hero from "./helpers/Hero";
 import Projects from "./helpers/Projects";
 import Work from "./helpers/Work";

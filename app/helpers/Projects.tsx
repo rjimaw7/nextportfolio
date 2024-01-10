@@ -4,7 +4,6 @@ import React, { MutableRefObject } from "react";
 import {
   Card,
   CardContent,
-  CardDescription,
   CardFooter,
   CardHeader,
   CardTitle,
@@ -18,9 +17,11 @@ const Projects = () => {
       id="projects"
       className="max-w-screen-2xl container flex flex-col items-center justify-center gap-8 min-h-screen"
     >
-      <h2 className="text-3xl font-bold text-center">My Projects</h2>
+      <h2 className="text-2xl md:text-2xl font-bold text-center">
+        My Projects
+      </h2>
 
-      <div className="flex justify-between gap-4 items-center w-full">
+      <div className="flex flex-col md:flex-row justify-between gap-8 md:gap-4 items-center w-full">
         <Card className="w-full">
           <CardHeader>
             <CardTitle className="relative aspect-video">
@@ -37,14 +38,16 @@ const Projects = () => {
 
               <div className="flex items-center gap-3">
                 <Badge className="py-1 cursor-pointer flex gap-1 items-center">
-                  <span className="text-xs">Github</span>
+                  <span className="text-xs hidden md:inline-block">Github</span>
                   <Github size={16} />
                 </Badge>
                 <Badge
                   className="py-1 cursor-pointer flex gap-1 items-center"
                   variant="outline"
                 >
-                  <span className="text-xs">Preview</span>
+                  <span className="text-xs hidden md:inline-block">
+                    Preview
+                  </span>
                   <ExternalLink size={16} />
                 </Badge>
               </div>
@@ -70,14 +73,16 @@ const Projects = () => {
 
               <div className="flex items-center gap-3">
                 <Badge className="py-1 cursor-pointer flex gap-1 items-center">
-                  <span className="text-xs">Github</span>
+                  <span className="text-xs hidden md:inline-block">Github</span>
                   <Github size={16} />
                 </Badge>
                 <Badge
                   className="py-1 cursor-pointer flex gap-1 items-center"
                   variant="outline"
                 >
-                  <span className="text-xs">Preview</span>
+                  <span className="text-xs hidden md:inline-block">
+                    Preview
+                  </span>
                   <ExternalLink size={16} />
                 </Badge>
               </div>
@@ -104,7 +109,9 @@ const Projects = () => {
                     href="https://github.com/rjimaw7/carsPH"
                     target="_blank"
                   >
-                    <span className="text-xs">Github</span>
+                    <span className="text-xs hidden md:inline-block">
+                      Github
+                    </span>
                     <Github size={16} />
                   </Link>
                 </Badge>
@@ -114,7 +121,9 @@ const Projects = () => {
                     href="https://cars-ph.vercel.app/"
                     target="_blank"
                   >
-                    <span className="text-xs">Preview</span>
+                    <span className="text-xs hidden md:inline-block">
+                      Preview
+                    </span>
                     <ExternalLink size={16} />
                   </Link>
                 </Badge>
