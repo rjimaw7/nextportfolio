@@ -1,13 +1,9 @@
-import React, { MutableRefObject } from "react";
 import { Button } from "@/components/ui/button";
 import { scrollToSection } from "@/lib/utils";
 
-const Hero = () => {
+const HeroContent = () => {
   return (
-    <section
-      id="hero"
-      className="mx-auto container flex max-w-[980px] flex-col items-center justify-center gap-1 min-h-screen"
-    >
+    <>
       <div className="flex flex-col gap-5">
         <h1 className="text-center text-3xl font-bold leading-tight tracking-tighter md:text-6xl">
           Crafting Everyday Progress
@@ -35,8 +31,8 @@ const Hero = () => {
           How I Work
         </Button>
       </div>
-    </section>
+    </>
   );
 };
 
-export default Hero;
+export default HeroContent;

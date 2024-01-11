@@ -1,21 +1,17 @@
-import React, { MutableRefObject } from "react";
+import React from "react";
 import Image from "next/image";
-import { FaReact } from "react-icons/fa";
-import ReactIcon from "../icons/ReactIcon";
-import TypescriptIcon from "../icons/TypescriptIcon";
-import NextJsIcon from "../icons/NextJsIcon";
-import NodeJsIcon from "../icons/NodeJsIcon";
-import TailwindIcon from "../icons/TailwindIcon";
-import ReduxIcon from "../icons/ReduxIcon";
-import JavascriptIcon from "../icons/JavascriptIcon";
-import PostgreIcon from "../icons/PostgreIcon";
+import ReactIcon from "../../icons/ReactIcon";
+import TypescriptIcon from "../../icons/TypescriptIcon";
+import NextJsIcon from "../../icons/NextJsIcon";
+import NodeJsIcon from "../../icons/NodeJsIcon";
+import TailwindIcon from "../../icons/TailwindIcon";
+import ReduxIcon from "../../icons/ReduxIcon";
+import JavascriptIcon from "../../icons/JavascriptIcon";
+import PostgreIcon from "../../icons/PostgreIcon";
 
-const Work = () => {
+const WorkContent = () => {
   return (
-    <section
-      id="work"
-      className="max-screen-2xl container flex flex-col md:flex-row justify-between mt-24 md:mt-12 min-h-screen"
-    >
+    <>
       <div className="flex-col gap-8 w-full hidden md:flex">
         <h2 className="text-2xl md:text-3xl font-bold text-center">
           How I Work
@@ -42,8 +38,8 @@ const Work = () => {
           <PostgreIcon className="w-full dark:bg-white dark:rounded-md" />
         </div>
       </div>
-    </section>
+    </>
   );
 };
 
-export default Work;
+export default WorkContent;

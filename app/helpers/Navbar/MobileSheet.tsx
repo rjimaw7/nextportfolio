@@ -8,7 +8,7 @@ import {
   SheetTrigger,
 } from "@/components/ui/sheet";
 import { GanttChart } from "lucide-react";
-import LineIcon from "../icons/SheetLineIcon";
+import LineIcon from "../../icons/SheetLineIcon";
 import Link from "next/link";
 import { scrollToSection } from "@/lib/utils";
 

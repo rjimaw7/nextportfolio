@@ -1,6 +1,8 @@
+"use client";
+
 import { Github, ExternalLink } from "lucide-react";
 import Image from "next/image";
-import React, { MutableRefObject } from "react";
+import React, { MutableRefObject, useRef } from "react";
 import {
   Card,
   CardContent,
@@ -10,12 +12,17 @@ import {
 } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import Link from "next/link";
+import SectionReveal from "@/components/SectionReveal";
 
 const Projects = () => {
+  const projectsRef = useRef(null);
+
   return (
-    <section
+    <SectionReveal
+      refElement={projectsRef}
       id="projects"
       className="max-w-screen-2xl container flex flex-col items-center justify-center gap-8 min-h-screen"
+      motionClassName="max-w-screen-2xl container flex flex-col items-center justify-center gap-8 min-h-screen"
     >
       <h2 className="text-2xl md:text-2xl font-bold text-center">
         My Projects
@@ -138,7 +145,7 @@ const Projects = () => {
           </CardFooter>
         </Card>
       </div>
-    </section>
+    </SectionReveal>
   );
 };
 

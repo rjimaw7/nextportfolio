@@ -25,7 +25,7 @@ import {
 import emailjs from "@emailjs/browser";
 import { useToast } from "@/components/ui/use-toast";
 import ReCAPTCHA from "react-google-recaptcha";
-import { useReCAPTCHA } from "../hooks/useReCAPTCHA";
+import { useReCAPTCHA } from "../../hooks/useReCAPTCHA";
 
 const MessageSchema = z.object({
   user_email: z.string().email(),
@@ -34,7 +34,7 @@ const MessageSchema = z.object({
 
 type MessageType = z.infer<typeof MessageSchema>;
 
-const Contact = () => {
+const ContactContent = () => {
   const { toast } = useToast();
   const form = useForm<MessageType>({
     resolver: zodResolver(MessageSchema),
@@ -80,11 +80,9 @@ const Contact = () => {
       });
     }
   };
+
   return (
-    <section
-      id="contact"
-      className="max-w-screen-2xl container min-h-screen md:mt-24 flex items-center justify-center flex-col gap-8"
-    >
+    <>
       <h2 className="text-2xl md:text-3xl font-bold text-center">Contact</h2>
 
       <Card className="w-[300px] md:w-[800px]">
@@ -159,8 +157,8 @@ const Contact = () => {
           </Form>
         </CardContent>
       </Card>
-    </section>
+    </>
   );
 };
 
-export default Contact;
+export default ContactContent;
