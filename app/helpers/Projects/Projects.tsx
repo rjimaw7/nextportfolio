@@ -40,7 +40,7 @@ const Projects = () => {
         </span>
       </div>
 
-      <div className="flex flex-col md:flex-row justify-between gap-8 md:gap-4 items-center w-full">
+      <div className="flex flex-col lg:flex-row justify-between gap-8 md:gap-4 items-center w-full">
         <Card className="w-full">
           <CardHeader>
             <CardTitle className="relative aspect-video">

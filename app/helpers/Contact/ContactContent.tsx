@@ -85,7 +85,7 @@ const ContactContent = () => {
     <>
       <h2 className="text-2xl md:text-3xl font-bold text-center">Contact</h2>
 
-      <Card className="w-[300px] md:w-[800px]">
+      <Card className="w-[300px] md:w-[700px] lg:w-[800px]">
         <CardHeader>
           <CardTitle className="self-center md:self-start">
             Send me a message
