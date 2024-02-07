@@ -69,7 +69,6 @@ const TechStack = () => {
           </div>
         </div>
 
-        {/* <div className="flex items-center mx-12 justify-center"> */}
         <div className="flex gap-4 md:gap-0 flex-col md:flex-row items-center md:mx-12 justify-center">
           <div className="flex gap-4 flex-col">
             <p className="text-center font-bold text-2xl flex justify-center items-center">

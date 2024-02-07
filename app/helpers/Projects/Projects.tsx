@@ -1,18 +1,10 @@
 "use client";
 
-import { Github, ExternalLink } from "lucide-react";
-import Image from "next/image";
-import React, { MutableRefObject, useRef } from "react";
-import {
-  Card,
-  CardContent,
-  CardFooter,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
+import React, { useRef } from "react";
 import Link from "next/link";
 import SectionReveal from "@/components/SectionReveal";
+import projects from "@/app/shared/constants/PROJECTS";
+import Project from "./Project";
 
 const Projects = () => {
   const projectsRef = useRef(null);
@@ -22,7 +14,7 @@ const Projects = () => {
       refElement={projectsRef}
       id="projects"
       className="max-w-screen-2xl container flex flex-col items-center justify-center gap-8 min-h-screen"
-      motionClassName="max-w-screen-2xl container flex flex-col items-center justify-center gap-8 min-h-screen"
+      motionClassName="max-w-screen-2xl flex flex-col items-center justify-center gap-8 min-h-screen"
     >
       <div className="flex flex-col gap-2 items-center">
         <h2 className="text-2xl md:text-2xl font-bold text-center">
@@ -40,139 +32,10 @@ const Projects = () => {
         </span>
       </div>
 
-      <div className="flex flex-col lg:flex-row justify-between gap-8 md:gap-4 items-center w-full">
-        <Card className="w-full">
-          <CardHeader>
-            <CardTitle className="relative aspect-video">
-              <Image src="/javcodes.png" alt="javcodes" fill />
-            </CardTitle>
-          </CardHeader>
-          <CardContent>
-            <div className="flex items-center justify-between">
-              <h3 className="text-2xl font-bold">JavCodes</h3>
-
-              <div className="flex items-center gap-3">
-                <Badge>
-                  <Link
-                    className=" flex gap-1 items-center py-1"
-                    href="https://github.com/rjimaw7/nextjavcodes"
-                    target="_blank"
-                  >
-                    <span className="text-xs hidden md:inline-block">
-                      Github
-                    </span>
-                    <Github size={16} />
-                  </Link>
-                </Badge>
-                <Badge variant="outline">
-                  <Link
-                    className=" flex gap-1 items-center py-1"
-                    href="https://nextjavcodes.vercel.app/"
-                    target="_blank"
-                  >
-                    <span className="text-xs hidden md:inline-block">
-                      Preview
-                    </span>
-                    <ExternalLink size={16} />
-                  </Link>
-                </Badge>
-              </div>
-            </div>
-          </CardContent>
-          <CardFooter className="flex gap-2 items-center justify-start">
-            <Badge className="py-1 cursor-pointer">Next JS</Badge>
-            <Badge variant="outline" className="py-1 cursor-pointer">
-              PostgreSQL
-            </Badge>
-          </CardFooter>
-        </Card>
-        <Card className="w-full">
-          <CardHeader>
-            <CardTitle className="relative aspect-video">
-              <Image src="/merndream.png" alt="merndream2024" fill />
-            </CardTitle>
-          </CardHeader>
-          <CardContent>
-            <div className="flex items-center justify-between">
-              <h3 className="text-2xl font-bold">Advent of Dreams</h3>
-
-              <div className="flex items-center gap-3">
-                <Badge>
-                  <Link
-                    className=" flex gap-1 items-center py-1"
-                    href="https://github.com/rjimaw7/merndream2024"
-                    target="_blank"
-                  >
-                    <span className="text-xs hidden md:inline-block">
-                      Github
-                    </span>
-                    <Github size={16} />
-                  </Link>
-                </Badge>
-                <Badge variant="outline">
-                  <Link
-                    className=" flex gap-1 items-center py-1"
-                    href="https://merndream2024.vercel.app/"
-                    target="_blank"
-                  >
-                    <span className="text-xs hidden md:inline-block">
-                      Preview
-                    </span>
-                    <ExternalLink size={16} />
-                  </Link>
-                </Badge>
-              </div>
-            </div>
-          </CardContent>
-          <CardFooter>
-            <Badge className="py-1 cursor-pointer">MERN</Badge>
-          </CardFooter>
-        </Card>
-        <Card className="w-full">
-          <CardHeader>
-            <CardTitle className="relative aspect-video">
-              <Image src="/carsPH.png" alt="random-image" fill />
-            </CardTitle>
-          </CardHeader>
-          <CardContent>
-            <div className="flex items-center justify-between">
-              <h3 className="text-2xl font-bold">carsPH</h3>
-
-              <div className="flex items-center gap-3">
-                <Badge>
-                  <Link
-                    className=" flex gap-1 items-center py-1"
-                    href="https://github.com/rjimaw7/carsPH"
-                    target="_blank"
-                  >
-                    <span className="text-xs hidden md:inline-block">
-                      Github
-                    </span>
-                    <Github size={16} />
-                  </Link>
-                </Badge>
-                <Badge variant="outline">
-                  <Link
-                    className=" flex gap-1 items-center py-1"
-                    href="https://cars-ph.vercel.app/"
-                    target="_blank"
-                  >
-                    <span className="text-xs hidden md:inline-block">
-                      Preview
-                    </span>
-                    <ExternalLink size={16} />
-                  </Link>
-                </Badge>
-              </div>
-            </div>
-          </CardContent>
-          <CardFooter className="flex gap-2 items-center justify-start">
-            <Badge className="py-1 cursor-pointer">React</Badge>
-            <Badge variant="outline" className="py-1 cursor-pointer">
-              Firebase
-            </Badge>
-          </CardFooter>
-        </Card>
+      <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 md:gap-4">
+        {projects.map((project, index) => (
+          <Project project={project} key={index} />
+        ))}
       </div>
     </SectionReveal>
   );
