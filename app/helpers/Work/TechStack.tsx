@@ -59,7 +59,7 @@ const TechStack = () => {
               <p className="text-xs">Tailwind</p>
             </div>
             <div className="flex flex-col items-center justify-center gap-1">
-              <ZustandIcon />
+              <ZustandIcon className="w-full" />
               <p className="text-xs">Zustand</p>
             </div>
             <div className="flex flex-col items-center justify-center gap-1">

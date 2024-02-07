@@ -44,36 +44,46 @@ const Projects = () => {
         <Card className="w-full">
           <CardHeader>
             <CardTitle className="relative aspect-video">
-              <Image
-                src="https://picsum.photos/400/300"
-                alt="random-image"
-                fill
-              />
+              <Image src="/javcodes.png" alt="javcodes" fill />
             </CardTitle>
           </CardHeader>
           <CardContent>
             <div className="flex items-center justify-between">
-              <h3 className="text-2xl font-bold">Project 1</h3>
+              <h3 className="text-2xl font-bold">JavCodes</h3>
 
               <div className="flex items-center gap-3">
-                <Badge className="py-1 cursor-pointer flex gap-1 items-center">
-                  <span className="text-xs hidden md:inline-block">Github</span>
-                  <Github size={16} />
+                <Badge>
+                  <Link
+                    className=" flex gap-1 items-center py-1"
+                    href="https://github.com/rjimaw7/nextjavcodes"
+                    target="_blank"
+                  >
+                    <span className="text-xs hidden md:inline-block">
+                      Github
+                    </span>
+                    <Github size={16} />
+                  </Link>
                 </Badge>
-                <Badge
-                  className="py-1 cursor-pointer flex gap-1 items-center"
-                  variant="outline"
-                >
-                  <span className="text-xs hidden md:inline-block">
-                    Preview
-                  </span>
-                  <ExternalLink size={16} />
+                <Badge variant="outline">
+                  <Link
+                    className=" flex gap-1 items-center py-1"
+                    href="https://nextjavcodes.vercel.app/"
+                    target="_blank"
+                  >
+                    <span className="text-xs hidden md:inline-block">
+                      Preview
+                    </span>
+                    <ExternalLink size={16} />
+                  </Link>
                 </Badge>
               </div>
             </div>
           </CardContent>
-          <CardFooter>
-            <Badge className="py-1 cursor-pointer">React</Badge>
+          <CardFooter className="flex gap-2 items-center justify-start">
+            <Badge className="py-1 cursor-pointer">Next JS</Badge>
+            <Badge variant="outline" className="py-1 cursor-pointer">
+              PostgreSQL
+            </Badge>
           </CardFooter>
         </Card>
         <Card className="w-full">

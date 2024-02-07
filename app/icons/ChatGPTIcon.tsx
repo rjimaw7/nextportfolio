@@ -67,8 +67,8 @@ const ChatGPTIcon = ({ className }: Props) => {
           y2="128"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="white" />
-          <stop offset="1" stop-color="#BCBCBC" />
+          <stop stopColor="white" />
+          <stop offset="1" stopColor="#BCBCBC" />
         </linearGradient>
       </defs>
     </svg>
