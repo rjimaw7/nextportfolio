@@ -83,7 +83,9 @@ const ContactContent = () => {
 
   return (
     <>
-      <h2 className="text-2xl md:text-3xl font-bold text-center">Contact</h2>
+      <h2 className="text-2xl md:text-3xl font-bold text-center text-primaryBlue">
+        Contact
+      </h2>
 
       <Card className="w-[300px] md:w-[700px] lg:w-[800px]">
         <CardHeader>
@@ -145,6 +147,7 @@ const ContactContent = () => {
 
               <Button
                 type="submit"
+                className="border hover:bg-white hover:text-[#2596be] hover:border-[#2596be]"
                 disabled={
                   !form.formState.isDirty ||
                   !form.formState.isValid ||

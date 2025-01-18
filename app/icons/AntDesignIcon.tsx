@@ -12,6 +12,7 @@ const AntDesignIcon = ({ className }: Props) => {
       viewBox="0 0 75 75"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
+      className={className}
     >
       <g clipPath="url(#clip0_339_1035)">
         <path

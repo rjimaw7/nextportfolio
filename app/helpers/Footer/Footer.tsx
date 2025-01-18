@@ -8,7 +8,7 @@ const Footer = () => {
       id="footer"
       className="p-10 text-center text-sm text-muted-foreground border-t border-border/80"
     >
-      <p className="text-sm">alessandro &copy;{currentYear}</p>
+      <p className="text-sm text-white">alessandro &copy;{currentYear}</p>
     </footer>
   );
 };

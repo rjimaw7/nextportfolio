@@ -36,7 +36,7 @@ const Navbar = () => {
               </span>
             </Link>
             <Link
-              href="/mate-resume.pdf"
+              href="/mate-resume-2025.pdf"
               rel="noopener noreferrer"
               target="_blank"
             >
@@ -57,22 +57,22 @@ const Navbar = () => {
 
         <div className="flex items-center gap-4">
           <Link href="https://github.com/rjimaw7" target="_blank">
-            <Github className="cursor-pointer" />
+            <Github className="cursor-pointer text-primaryBlue" />
           </Link>
           <Link
             href="https://www.linkedin.com/in/alessandro-mate-jr-15b369168/"
             target="_blank"
           >
-            <Linkedin className="cursor-pointer" />
+            <Linkedin className="cursor-pointer text-primaryBlue" />
           </Link>
-          <Sun
+          {/* <Sun
             className="cursor-pointer dark:hidden"
             onClick={() => setTheme("dark")}
           />
           <Moon
             className="cursor-pointer hidden dark:inline-flex"
             onClick={() => setTheme("light")}
-          />
+          /> */}
         </div>
       </div>
     </header>
