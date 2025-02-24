@@ -18,6 +18,30 @@ export interface ProjectType {
 
 const projects: ProjectType[] = [
   {
+    title: "NewsMate",
+    imageSrc: "/newsmatess.png",
+    alt: "newsmate",
+    links: [
+      {
+        url: "https://github.com/rjimaw7/newsmate",
+        label: "Github",
+        icon: <Github size={16} />,
+      },
+      {
+        url: "https://newsmate.vercel.app",
+        label: "Preview",
+        icon: <ExternalLink size={16} />,
+        variant: "outline",
+      },
+    ],
+    technologies: [
+      { name: "Next JS", variant: "default" },
+      { name: "Python", variant: "outline" },
+      { name: "AWS", variant: "default" },
+      { name: "Supabase", variant: "outline" },
+    ],
+  },
+  {
     title: "JavCodes",
     imageSrc: "/javcodes.png",
     alt: "javcodes",
